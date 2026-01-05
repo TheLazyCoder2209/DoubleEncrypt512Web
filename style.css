@@ -1,0 +1,185 @@
+/* Holo Dark Theme Palette */
+:root {
+    --holo-blue: #33B5E5;
+    --holo-dark-blue: #0099CC;
+    --background: #000000;
+    --card-bg: rgba(18, 18, 18, 0.95);
+    --divider: #333333;
+}
+
+body {
+    background-color: var(--background);
+    background-image: linear-gradient(rgba(51, 181, 229, 0.05) 1px, transparent 1px);
+    background-size: 100% 3px; /* Scanline effect */
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Action Bar */
+.action-bar {
+    height: 56px;
+    background: #000;
+    border-bottom: 2px solid var(--holo-blue);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.action-bar-title {
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--holo-blue);
+    text-transform: uppercase;
+}
+
+.logo-accent {
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+/* Main Container */
+.viewport {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.app-card {
+    background: var(--card-bg);
+    border: 1px solid var(--divider);
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* GODLY ANIMATIONS */
+.animate-window {
+    animation: holoWindowEntrance 0.6s cubic-bezier(0, 1, 0.5, 1);
+}
+
+@keyframes holoWindowEntrance {
+    from { opacity: 0; transform: scale(0.9) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 36px;
+    color: var(--holo-blue);
+    margin: 0 0 10px 0;
+}
+
+.description {
+    font-weight: 300;
+    line-height: 1.6;
+    color: #BBB;
+}
+
+.divider {
+    height: 1px;
+    background: var(--divider);
+    margin: 30px 0;
+    position: relative;
+}
+
+.divider::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    background: var(--holo-blue);
+    left: 0;
+}
+
+/* Features List */
+.feature-item {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+.holo-icon {
+    font-size: 24px;
+    margin-right: 20px;
+    color: var(--holo-blue);
+    text-shadow: 0 0 8px var(--holo-blue);
+}
+
+.feature-text strong {
+    color: var(--holo-blue);
+    font-weight: 400;
+}
+
+.feature-text p {
+    margin: 5px 0 0 0;
+    font-weight: 300;
+    font-size: 14px;
+    color: #888;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.btn-holo {
+    padding: 12px 24px;
+    border: 2px solid var(--holo-blue);
+    color: var(--holo-blue);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    cursor: pointer;
+    background: transparent;
+}
+
+.btn-holo:hover:not(.disabled) {
+    background: rgba(51, 181, 229, 0.15);
+    box-shadow: 0 0 15px var(--holo-blue);
+}
+
+.btn-holo.primary {
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 2px var(--holo-blue); }
+    50% { box-shadow: 0 0 12px var(--holo-blue); }
+    100% { box-shadow: 0 0 2px var(--holo-blue); }
+}
+
+.btn-holo.disabled {
+    border-color: #444;
+    color: #444;
+    cursor: not-allowed;
+}
+
+/* Footer */
+.useless-box {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.useless-box p {
+    text-decoration: line-through;
+    color: #333;
+    font-size: 12px;
+}
+
+.build-info {
+    text-decoration: none !important;
+    color: #111 !important;
+    font-family: monospace;
+}
