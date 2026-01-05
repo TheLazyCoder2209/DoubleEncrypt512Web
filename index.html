@@ -5,9 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DoubleEncrypt512 | The Vault</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <div id="splash-screen">
+        <div class="splash-content">
+            <p class="loading-text">Loading my fantastic (maybe) webpage...</p>
+            <div class="holo-progress-container">
+                <div class="holo-progress-bar"></div>
+            </div>
+            <p class="status-msg">Allocating 512 bits of nonsense...</p>
+        </div>
+    </div>
 
     <div class="action-bar">
         <div class="action-bar-title">
@@ -18,10 +28,11 @@
     <main class="viewport">
         <div class="app-card animate-window">
             <section class="hero">
-                <h1>Secure Your Reality</h1>
+                <h1>I Secure Your Reality</h1>
                 <p class="description">
-                    DoubleEncrypt512 combines **AES-256 GCM** hardware-backed encryption with external **NFC physical entropy**. 
-                    By layering device-specific keys with high-entropy tag data, we create a 512-bit security barrier that remains uncrackable even if your phone is compromised.
+                    I built DoubleEncrypt512 because I don't trust the cloud. This app combines **AES-256 GCM** hardware-backed encryption with external **NFC physical entropy**. 
+                    By layering your device-specific keys with high-entropy tag data, I've created a 512-bit security barrier that remains uncrackable even if a hacker manages to clone your phone. 
+                    Unless they also steal your physical NFC ring/card, they're staring at digital static.
                 </p>
             </section>
 
@@ -31,22 +42,22 @@
                 <div class="feature-item">
                     <div class="holo-icon">📂</div>
                     <div class="feature-text">
-                        <strong>Scoped Storage</strong>
-                        <p>Zero access to your private files. You only grant permission to what you encrypt.</p>
+                        <strong class="fat-text">Scoped Storage Mastery</strong>
+                        <p>I have zero access to your private files. You only grant permission to exactly what you want to encrypt. No "All Files" permission required.</p>
                     </div>
                 </div>
                 <div class="feature-item">
                     <div class="holo-icon">✂️</div>
                     <div class="feature-text">
-                        <strong>Secure Eraser</strong>
-                        <p>One-pass physical shredding. Overwrites original data with random noise before deletion.</p>
+                        <strong class="fat-text">The Digital Shredder</strong>
+                        <p>I implemented a one-pass physical shredder. I overwrite your original files with random noise before the OS even knows they're being deleted.</p>
                     </div>
                 </div>
                 <div class="feature-item">
                     <div class="holo-icon">📡</div>
                     <div class="feature-text">
-                        <strong>100% Air-Gapped</strong>
-                        <p>Zero internet permissions. Your keys never leave the physical proximity of your hand.</p>
+                        <strong class="fat-text">No Internet, No Problems</strong>
+                        <p>I gave this app zero internet permissions. Your keys never leave the physical proximity of your hand. If I can't see your data, nobody can.</p>
                     </div>
                 </div>
             </section>
@@ -63,9 +74,25 @@
 
         <footer class="useless-box">
             <p>~~This website utilizes a 512-bit aesthetic handshake protocol to ensure uselessness.~~</p>
-            <p class="build-info">Build: STABLE_RELEASE_JB_4.1</p>
+            <p class="build-info">Build: STABLE_RELEASE_JB_4.1_SOLO</p>
         </footer>
     </main>
 
+    <script>
+        // Splash screen timer
+        setTimeout(() => {
+            const splash = document.getElementById('splash-screen');
+            splash.style.opacity = '0';
+            setTimeout(() => { splash.style.display = 'none'; }, 500);
+        }, 3000);
+
+        // Jokey status messages
+        const messages = ["Optimizing gradients...", "Downloading more RAM...", "Reticulating splines...", "Encrypting the encryption..."];
+        let i = 0;
+        setInterval(() => {
+            document.querySelector('.status-msg').innerText = messages[i % messages.length];
+            i++;
+        }, 800);
+    </script>
 </body>
 </html>
